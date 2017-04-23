@@ -1,0 +1,47 @@
+* {
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+body {
+	font:2vw Roboto;
+	overflow:hidden;
+	background-image:url('minion.gif');
+	background-size:5% 10%;
+	background-position:center;
+	background-color:black;
+}
+
+/*buttons*/
+
+.button {
+    position:absolute;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	color:white;
+	filter:brightness(80%);
+	background-color:rgba(255,255,255,1);
+	transition:1s;
+	top:50%;
+	width:25%;
+	height:35%;
+	-webkit-transform:translate(-50%,-50%);
+	background-image:url('rock.png');
+	background-size:100% 100%;
+	background-position:center;
+}
+
+.button:hover {
+	filter:brightness(100%);
+	cursor:pointer;
+	width:27%;
+    box-shadow: 0px 0px 50px white;
+	font-size: 2.2vw;
+}
+
+.button:active {
+	filter:brightness(100%);
+	cursor:pointer;
+}
+
+/*end of buttons*/
