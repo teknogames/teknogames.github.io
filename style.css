@@ -1,9 +1,9 @@
 * {
 	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	user-select:none;
 }
 
 body {
-	font:2vw Roboto;
 	overflow:hidden;
 	background-image:url('minion.gif');
 	background-size:5% 10%;
@@ -11,32 +11,63 @@ body {
 	background-color:black;
 }
 
-/*buttons*/
-
-.button {
-    position:absolute;
+#center {
+    -webkit-animation: fadein 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 	display:flex;
 	align-items:center;
 	justify-content:center;
+	position:fixed;
+	top:50%;
+	left:50%;
+	width:80%;
+	transform:translate(-50%,-50%);
+}
+
+.title {
+	display:flex;
+	align-items:center;
+	justify-content:flex-end;
+    position:fixed;
+	left:-5vw;	
+	filter:brightness(80%);
+	padding:0.6vw 1.2vw;
+	font:1.5vw Roboto;
+	font-weight:300;
+	width:15vw;
+	height:5vw;
+	margin-top:1.25vw;
+	border-radius:0.5vw;
+	background-color:rgba(255,255,255,0.9);
+	background-position:center;
+	transition:padding 0.2s;	
+}
+
+.button {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+    position:relative;
+	float:left;
 	color:white;
 	filter:brightness(80%);
-	background-color:rgba(255,255,255,1);
-	transition:1s;
-	top:50%;
-	width:25%;
-	height:35%;
-	-webkit-transform:translate(-50%,-50%);
+	padding:0.6vw 1.2vw;
+	width:10vw;
+	height:8vw;
+	font:2vw Roboto;
+	font-weight:400;
+	margin-left:0.5vw;
+	margin-right:0.5vw;
+	border-radius:0.5vw;
 	background-image:url('rock.png');
 	background-size:100% 100%;
 	background-position:center;
+	transition:filter 0.2s, box-shadow 0.2s;	
 }
 
 .button:hover {
 	filter:brightness(100%);
-	cursor:pointer;
-	width:27%;
     box-shadow: 0px 0px 50px white;
-	font-size: 2.2vw;
+	cursor:pointer;
 }
 
 .button:active {
@@ -44,4 +75,43 @@ body {
 	cursor:pointer;
 }
 
-/*end of buttons*/
+.line-break {
+	width:100%;
+	height:10vw;
+}
+			
+.description {
+	position:fixed;
+	width:9.8vw;
+	text-align:center;
+	font-family:'Roboto', sans-serif;
+	font-size:1vw;
+	padding-top:0.3vw;
+	padding-bottom:0.3vw;
+	font-weight:300;
+	background-color:rgba(255,255,255,0.8);
+	border-radius:0.3vw;
+	z-index:5;
+	pointer-events:none;
+}
+
+a {
+	color:inherit;
+	text-decoration:none;
+	cursor:pointer;
+}
+
+a:hover {
+	color:rgb(150,150,150);
+}
+
+@keyframes fadein {
+    from {
+		opacity:0;
+		transform:translate(-100%,-50%);
+	}
+    to {
+		opacity:1;
+		transform:translate(-50%,-50%);
+	}
+}
